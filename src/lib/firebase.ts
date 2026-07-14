@@ -2,7 +2,6 @@ import { initializeApp, getApps } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
-import { getAnalytics } from 'firebase/analytics'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -11,7 +10,6 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 }
 
 export const firebaseEnabled = import.meta.env.VITE_USE_FIREBASE === 'true' && Boolean(firebaseConfig.apiKey)
@@ -19,4 +17,3 @@ export const firebaseApp = firebaseEnabled ? (getApps()[0] ?? initializeApp(fire
 export const auth = firebaseApp ? getAuth(firebaseApp) : null
 export const db = firebaseApp ? getFirestore(firebaseApp) : null
 export const storage = firebaseApp ? getStorage(firebaseApp) : null
-export const analytics = firebaseApp ? getAnalytics(firebaseApp) : null
