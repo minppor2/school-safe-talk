@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "firebase": "latest",
+    "firebase": "^12.16.0",
     "lucide-react": "latest",
-    "vite": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-router-dom": "latest"
+    "react-router-dom": "latest",
+    "vite": "latest"
   },
   "devDependencies": {
     "@eslint/js": "latest",
